@@ -1,0 +1,70 @@
+<!-- nav.component.html -->
+<nav class="navbar">
+    <div class="container flex">
+        <button class="navbar__toggler" type="button" [attr.aria-expanded]="isOpen ? 'true' : 'false'" (click)="toggleMenu()">
+            <img src="/assets/images/menu.svg" *ngIf="!isOpen" alt="Open menu" class="navbar__toggler__icon">
+            <img src="/assets/images/close.svg" *ngIf="isOpen" alt="Close menu" class="navbar__toggler__icon">
+        </button>
+    
+        <div class="navbar__nav">
+            <a class="navbar__logo" href="/">
+                <img src="/assets/images/logo.svg" alt="Logo" class="navbar__logo__img">
+            </a>
+            <ul class="navbar__items">
+                <li class="navbar__items-item">
+                    <a class="navbar__link" href="#">Check-in</a>
+                </li>
+                <li class="navbar__items-item">
+                    <a class="navbar__link" href="#">Manage my booking</a>
+                </li>
+                <li class="navbar__items-item" (click)="toggleSubmenu()">
+                    <span class="navbar__link">Information</span>
+                    <div class="navbar__submenu" [ngClass]="{'show': isSubmenu}">
+                        <ul class="navbar__submenu-items">
+                            <li class="navbar__submenu-item">
+                                <a href="#">Help center</a>
+                            </li>
+                            <li class="navbar__submenu-item">
+                                <a href="#">Flight state</a>
+                            </li>
+                            <li class="navbar__submenu-item">
+                                <a href="#">Airplanes</a>
+                            </li>
+                            <li class="navbar__submenu-item">
+                                <a href="#">Routes</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    
+        <button class="lang__toggler" type="button">
+            <img src="/assets/images/lang.svg" alt="Icon lang world" class="lang__toggler__icon">
+            <span class="lang__toggler-text">English</span>
+        </button>
+    </div>
+</nav>
+
+<div class="collapse navbar-collapse" [ngClass]="{'is-open': isOpen}" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Check-in</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Manage my booking</a>
+        </li>
+        <li class="nav-item">
+            <span class="nav-link" (click)="toggleMobileSubmenu()">Information</span>
+        </li>
+    </ul>
+    <div class="collapse__submenu" *ngIf="mobileSubmenu">
+        <h3>Information</h3>
+        <ul>
+            <li>Help center</li>
+            <li>Flight state</li>
+            <li>Airplanes</li>
+            <li>Routes</li>
+        </ul>
+    </div>
+</div>

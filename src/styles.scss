@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/fonts';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $roboto-medium, sans-serif;
+}
+
+.container {
+    max-width: 1248px;
+    height: 100%;
+    margin: 0 auto;
+    &.flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

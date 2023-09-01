@@ -1,0 +1,80 @@
+.footer {
+    position: relative;
+    background-color: #E7E6F6;
+    padding: 20px 20px 100px 20px;
+    &__social {
+        padding: 30px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        &-link{
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            > img {
+                width: 100%;
+            }
+        }
+    }
+    &__copyright {
+        background-color: #F1F0FF;
+        color: #9292A0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.6;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 10px 20px;
+        width: 100%;
+    }
+    h3 {
+        width: 100%;
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 10px;
+        line-height: 21.09px;
+    }
+    ul {
+        list-style: none;
+        padding: 10px;
+        > li {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 18.75px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .footer{
+        &__content{
+            display: flex;
+            align-items: center;
+        }
+        &__logo{
+            width: 50%;
+            > img{
+                width: 300px;
+            }
+        }
+        &__links{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        &__social{
+            order: 1;
+            &-link{
+                width: 40px;
+                height: 40px;
+            }
+        }
+        &__destinations,
+        &__legal,
+        &__book{
+            width: calc(100% / 3);
+        }
+    }
+}
